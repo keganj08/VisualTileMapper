@@ -1,6 +1,6 @@
 var tileCnt = 0;
 var tiles;
-var currentTile = "blank.png"; 
+var currentTile = "res/blank.png"; 
 var tileBrushNums = new Array();
 var currentBrushNum = -1;
 
@@ -71,7 +71,7 @@ function makeGrid(rows, cols) {
         let cell = document.createElement("img");
         cell.setAttribute('draggable', false);
         cell.id = 'tile_' + row.toString() + '_' + col.toString();
-        cell.setAttribute("src", "blank.png");
+        cell.setAttribute("src", "res/blank.png");
 
         let preventRepaint = false;
 
