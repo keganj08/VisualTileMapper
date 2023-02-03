@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Visual Tile Mapper</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <div class="outerBox">
+        <div class="innerBox" id="mapBox">
+            <div id="grid">
+
+            </div>
+        </div>
+        <div class="innerBox" id="uiBox">
+                <h1>Visual Tile Mapper</h1>
+                <div class="uiInnerBox">
+                    <label>Size:</label>
+                    <input type="text" id="rowsInput" name="rowsInput" value="12">
+                    <label>x</label>
+                    <input type="text" id="colsInput" name="colsInput" value="12">
+                    <input type="submit" value="Resize" onclick="newGrid()">
+                </div>
+
+                <div class="uiInnerBox">
+                    <label for="imgInput">Add tiles:</label>
+                    <input type="file" onchange="loadTileBrushes(event)" accept=".png, .jpg, .jpeg" id="imgInput" multiple>
+                </div>
+
+                <div id="uiTilesBox">
+
+                </div>
+
+                <div class="uiInnerBox">
+                    <label for="tileNumberInput">Tile number: </label>
+                    <input type="text" id="tileNumberInput" name="tileNumberInput" value="--">
+                    <input type="submit" value="Set" onclick="setSelectedTileBrushNum()"><br>
+                </div>
+                <p>Remember to set your tile numbers before mapping</p>
+                
+                <div class="uiInnerBox">
+                    <label for="fileNameInput">File name: </label>
+                    <input type="text" id="fileNameInput" name="fileNameInput" value="newMap">
+                    <input type="submit" value="Download .txt" onclick="generateFile()"><br>
+                </div>
+        </div>
+    </div>
+
+    <script src="scripts.js"></script> 
+</body>

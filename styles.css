@@ -1,0 +1,155 @@
+* {
+  box-sizing: border-box;
+  font-family: Helvetica, sans-serif;
+}
+
+html, body {
+  padding: 0;
+  margin: 0;
+  height: 100%;
+}
+
+h1 {
+  font-size: 1em;
+}
+
+p {
+  font-size: 0.8em;
+}
+
+.outerBox, .innerBox {
+  display: flex;
+}
+
+.outerBox {
+  height: 100%;
+  padding: 2.5%;
+  justify-content: center;
+  gap: 2em;
+
+}
+
+.innerBox {
+  width: auto;
+  flex-direction: column;
+  align-items: center;
+  background-color: #ddd;
+  border-radius: 0.5em;
+  padding: 0.2em;
+}
+
+.uiInnerBox, #uiTilesBox {
+  margin: 0.6em 0;
+  width: 90%;
+}
+
+.uiInnerBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color:#CCC;
+  padding: 0.2em;
+  border-radius: 0.5em;
+  flex-wrap: wrap;
+}
+
+.uiInnerBox input {
+  margin: 0 0.5em;
+}
+
+.uiInnerBox input[type='file'] {
+}
+
+.uiInnerBox input[type="text"] {
+  width: 15%;
+}
+
+#uiTilesBox {
+  flex-grow: 1;
+  flex-wrap: wrap;
+  width: 90%;
+  background-color: #EEE;
+  border: 0.2em solid #EEE;
+  border-radius: 0.5em;
+  min-height: 4em;
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
+#mapBox {
+  width: 65%;
+  height: auto;
+  padding: 1em;
+  overflow: auto;
+  justify-content: center;
+}
+
+#uiBox {
+  width: 32rem;
+  justify-content: top;
+  align-items: center;
+  overflow: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+:root {
+  --grid-cols: 1;
+  --grid-rows: 1;
+}
+  
+#grid {
+  border: 0.1rem solid black;
+  aspect-ratio: var(--grid-cols) / var(--grid-rows);
+  object-fit: contain !important;
+  display: grid;
+  background-color: lightgray;
+  grid-gap: 0.05rem;
+  grid-template-rows: repeat(var(--grid-rows), 1fr);
+  grid-template-columns: repeat(var(--grid-cols), 1fr);
+  transform-origin: top left;
+  /*transform: scale(5);*/
+}
+
+.grid-item {
+  height: 100%;
+  width: 100%;
+  text-align: center;    
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  border: none;
+}
+
+.grid-item:hover {
+  filter: brightness(80%);
+  cursor: pointer;
+}
+
+.tileImg {
+  width: 3em;
+  height: 3em;
+  margin: 0.2em;
+  border: 0.1em solid #ddd;
+}
+
+.tileImg:hover {
+  cursor: pointer;
+  opacity: 0.8;
+}
+
+.selectedTileImg {
+  border: 0.2em solid red;
+}
+
+img {
+  -webkit-user-select: none; /* Safari */        
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* IE10+/Edge */
+  user-select: none; /* Standard */
+}
+
+#fileNameInput {
+  width: 8em;
+}
